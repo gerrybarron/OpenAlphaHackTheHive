@@ -15,6 +15,9 @@ class CreateSavingTypesTable extends Migration
     {
         Schema::create('saving_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->enum('type', ['Private', 'Government']);
             $table->timestamps();
         });
     }

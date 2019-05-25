@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLoanTypesTable extends Migration
+class CreateWithdrawalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateLoanTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('loan_types', function (Blueprint $table) {
+        Schema::create('withdrawals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('description')->nullable();
-            $table->enum('type', ['Private', 'Government']);
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateLoanTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loan_types');
+        Schema::dropIfExists('withdrawals');
     }
 }

@@ -15,6 +15,9 @@ class CreateInsuranceTypesTable extends Migration
     {
         Schema::create('insurance_types', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('description')->nullable();
+            $table->enum('type', ['Private', 'Government']);
             $table->timestamps();
         });
     }
