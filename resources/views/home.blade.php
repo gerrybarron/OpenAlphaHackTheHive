@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-3">
-            <a href="{{route('account')}}" class="text-body mb-0"><strong>P 10,000</strong></a>
+            <a href="{{route('account')}}" class="text-body mb-0"><strong>P {{$fund->amount}}</strong></a>
             <p>Account</p>
         </div>
         <div class="col-lg-6">
@@ -16,6 +16,14 @@
             <p class="text-right">Total Points</p>
         </div>
         <div class="col-md-12">
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session('success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
             <div class="card mb-4">
                 <div class="card-header">Dashboard</div>
                 

@@ -28,6 +28,10 @@ Route::prefix('profile')->group(function() {
 
 Route::prefix('account')->group(function() {
     Route::get('/', 'AccountController@show')->name('account');
+    Route::get('/bpi', 'AccountController@bpi')->name('account.bpi');
+    Route::post('/bpi', 'AccountController@bpi_p')->name('account.bpi.phaseone');
+    Route::get('/bpi/confirmation', 'AccountController@bpi_confirmation')->name('account.bpi.confirmation');
+    Route::post('/bpi/confirmation', 'AccountController@store')->name('account.bpi.store');
 });
 
 Route::prefix('investment')->group(function() {

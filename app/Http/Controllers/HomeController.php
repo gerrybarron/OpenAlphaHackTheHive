@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $fund = auth()->user()->fund;
+        return view('home')->with([
+            'fund' => $fund
+        ]);
     }
 }

@@ -14,6 +14,7 @@ use App\Models\Saving;
 use App\Models\Withdrawal;
 use App\Models\Loan;
 use App\Models\Investment;
+use App\Models\Fund;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -52,6 +53,10 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function accessType(){
         return $this->hasOne(AccessType::class);
+    }
+
+    public function fund(){
+        return $this->hasOne(Fund::class);
     }
 
     public function profile(){

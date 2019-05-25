@@ -7,10 +7,10 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'All in Juan') }}</title>
 
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script scr="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
 
@@ -20,7 +20,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @yield('header-styles');
+    @yield('header-styles')
 </head>
 <body>
     <div id="app">
@@ -80,6 +80,6 @@
         </main>
     </div>
     
-    @yield('footer-scripts');
+    @yield('footer-scripts')
 </body>
 </html>

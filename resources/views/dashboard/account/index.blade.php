@@ -7,16 +7,18 @@
         </div>
         <div class="col-md-3">
             <div class="c card">
+                <a href="{{route('account.bpi')}}">
                 <div class="img_container">
                     <img src="{{asset('images/logo/bpi.png')}}" alt="" class="c_img">
                 </div>
                 <div class="c_content">
                     <div class="row c_content_row">
-                        <div class="col-lg-12">
-                            <a href="#" class="badge badge-success">Linked</a>
+                            <div class="col-lg-12">
+                                <span class="badge badge-success">Linked</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
         <div class="col-md-3">
