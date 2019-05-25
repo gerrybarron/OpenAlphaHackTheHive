@@ -62,7 +62,17 @@ class ProfileController extends Controller
             'image' => ['required', 'image'],
         ]);
 
-        auth()->user()->profile()->create($data);
+        if(auth()->user()->profile == null){
+            auth()->user()->profile()->create($data);
+            request('image')->store('uploads', 'public');
+        }
+        else {
+            auth()->user()->profile()->update($data);
+            request('image')->store('uploads', 'public');
+            
+        }
+
+        return redirect()->back()->with('success', 'Profile Updated');
     }
 
     /**
@@ -73,6 +83,7 @@ class ProfileController extends Controller
      */
     public function show()
     {
+        // return auth()->user()->profile;
         $user = Auth::user()->profile;
         $roles = ProfileType::all(); 
         $client = new Client();
