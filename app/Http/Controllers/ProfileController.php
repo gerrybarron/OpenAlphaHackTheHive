@@ -63,12 +63,35 @@ class ProfileController extends Controller
         ]);
 
         if(auth()->user()->profile == null){
-            auth()->user()->profile()->create($data);
-            request('image')->store('uploads', 'public');
+            $imagePath = request('image')->store('uploads', 'public');
+
+            auth()->user()->profile()->create([
+                'profile_type_id' => $data['profile_type_id'],
+                'firstname' => $data['firstname'],
+                'lastname' => $data['lastname'],
+                'middlename' => $data['middlename'],
+                'country' => $data['country'],
+                'state' => $data['state'],
+                'city' => $data['city'],
+                'street' => $data['street'],
+                'zipcode' => $data['zipcode'],
+                'image' => $imagePath,
+            ]);
         }
         else {
-            auth()->user()->profile()->update($data);
-            request('image')->store('uploads', 'public');
+            $imagePath = request('image')->store('uploads', 'public');
+            auth()->user()->profile()->update([
+                'profile_type_id' => $data['profile_type_id'],
+                'firstname' => $data['firstname'],
+                'lastname' => $data['lastname'],
+                'middlename' => $data['middlename'],
+                'country' => $data['country'],
+                'state' => $data['state'],
+                'city' => $data['city'],
+                'street' => $data['street'],
+                'zipcode' => $data['zipcode'],
+                'image' => $imagePath,
+            ]);
             
         }
 
