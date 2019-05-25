@@ -15,6 +15,10 @@ class CreateSavingsTable extends Migration
     {
         Schema::create('savings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('saving_type_id');
+            $table->integer('amount');
+            $table->index('user_id');
             $table->timestamps();
         });
     }

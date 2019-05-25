@@ -15,6 +15,9 @@ class CreateInvestmentsTable extends Migration
     {
         Schema::create('investments', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('investment_type_id');
+            $table->index('user_id');
             $table->timestamps();
         });
     }

@@ -15,6 +15,9 @@ class CreateReceiptGalleriesTable extends Migration
     {
         Schema::create('receipt_galleries', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('expendiure_id');
+            $table->text('filename');
+            $table->index('expenditure_id');
             $table->timestamps();
         });
     }
