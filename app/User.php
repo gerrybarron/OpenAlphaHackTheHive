@@ -7,6 +7,13 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Profile;
 use App\Models\AccessType;
+use App\Models\Expenditure;
+use App\Models\Account;
+use App\Models\Insurance;
+use App\Models\Saving;
+use App\Models\Withdrawal;
+use App\Models\Loan;
+use App\Models\Investment;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -49,5 +56,33 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function profile(){
         return $this->hasOne(Profile::class);
+    }
+
+    public function accounts(){
+        return $this->hasMany(Account::class);
+    }
+
+    public function expenditures(){
+        return $this->hasMany(Expenditure::class);
+    }
+
+    public function insurances(){
+        return $this->hasMany(Insurance::class);
+    }
+
+    public function savings(){
+        return $this->hasMany(Saving::class);        
+    }
+
+    public function withdrawals(){
+        return $this->hasMany(Withdrawal::class);
+    }
+
+    public function loans(){
+        return $this->hasMany(Loan::class);
+    }
+
+    public function investments(){
+        return $this->hasMany(Investment::class);
     }
 }

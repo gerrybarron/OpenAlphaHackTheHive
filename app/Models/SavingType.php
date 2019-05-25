@@ -12,4 +12,8 @@ class SavingType extends Model
      * @var array
      */
     protected $fillable = ['name', 'description', 'type'];
+
+    public function saving(){
+        return $this->belongsTo(Saving::class);
+    }
 }

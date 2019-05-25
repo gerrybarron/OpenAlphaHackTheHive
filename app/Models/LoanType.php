@@ -12,4 +12,8 @@ class LoanType extends Model
      * @var array
      */
     protected $fillable = ['name', 'description', 'type'];
+
+    public function loan(){
+        return $this->belongsTo(Loan::class);
+    }
 }
