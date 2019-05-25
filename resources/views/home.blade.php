@@ -60,7 +60,7 @@
             <div class="card mb-4">
                 <div class="card-header d-flex">
                     Investments
-                    <a class="btn btn-primary ml-auto btn-sm" href="#" role="button">View Investment Products</a>
+                    <a class="btn btn-primary ml-auto btn-sm" href="{{ route('investment') }}" role="button">View Investments</a>
                 </div>
                 
                 <div class="card-body">
@@ -72,7 +72,7 @@
                                 <td class="text-right">350.62</td>
                             </tr>
                             <tr>
-                                <td scope="row">ATRAM Peso Money Market Fund</td>
+                                <td scope="row">ALFM Money Market Fund</td>
                                 <td class="text-right">350.62</td>
                                 
                             </tr>

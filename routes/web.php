@@ -30,3 +30,9 @@ Route::prefix('account')->group(function() {
     Route::get('/', 'AccountController@show')->name('account');
 });
 
+Route::prefix('investment')->group(function() {
+    Route::get('/', 'InvestmentController@index')->name('investment');
+    Route::get('/products', 'InvestmentController@products')->name('investment.products');
+    Route::get('/product/{id}', 'InvestmentController@product')->name('investment.product');
+});
+
