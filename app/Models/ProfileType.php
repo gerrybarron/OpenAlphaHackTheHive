@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class AccessType extends Model
+class ProfileType extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,7 +13,7 @@ class AccessType extends Model
      */
     protected $fillable = ['name', 'description'];
 
-    public function user(){
-        return $this->belongsTo(User::class);
+    public function profile(){
+        return $this->belongsTo(Profile::class);
     }
 }
