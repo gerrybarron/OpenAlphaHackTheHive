@@ -12,7 +12,10 @@
             <p class="lead text-center">Follow your instincts. That's where true wisdom manifests itself.</p>
         </div>
         <div class="col-lg-3">
-            <p class="text-right mb-0"><strong>JT 20,038</strong></p>
+            <p class="text-right mb-0">
+                <img src="{{ asset('images/juantoken-05.png') }}" alt="" height="25px">
+                <strong>20,038</strong>
+            </p>
             <p class="text-right">Total Points</p>
         </div>
         <div class="col-md-12">
