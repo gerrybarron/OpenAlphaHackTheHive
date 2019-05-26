@@ -23,8 +23,12 @@
                             <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Profile Image') }}</label>
                             
                             <div class="col-md-6">
-                                
+                                @if ( $user->image==null)
+
                                 <img src="{{ asset('images/no-image.png') }}" alt="" id="img_src" class="img-fluid">
+                                @else
+                                <img src="{{ asset('storage/'.$user->image) }}" alt="" id="img_src" class="img-fluid">
+                                @endif
                                 <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" >
                                 
                                 @error('image')

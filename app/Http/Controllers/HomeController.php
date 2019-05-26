@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Expenditure;
 
 class HomeController extends Controller
 {
@@ -23,9 +24,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $expenses = Expenditure::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
         $fund = auth()->user()->fund;
         return view('home')->with([
-            'fund' => $fund
+            'fund' => $fund,
+            'expenses' => $expenses
         ]);
     }
 }
