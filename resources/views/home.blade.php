@@ -30,13 +30,20 @@
                     {{-- <a class="btn btn-primary ml-auto btn-sm" href="{{route('expenses')}}" role="button">View all</a>
                     <a class="btn btn-primary ml-auto btn-sm" href="{{route('expenses')}}" role="button">View all</a> --}}
                     <div class="btn-group ml-auto" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary">Fast Actions <span class="badge badge-light">0</span></button>
-                        <button type="button" class="btn btn-secondary">Dynamic Actions <span class="badge badge-light">4</span></button>
+                        <button type="button" class="btn btn-info">Fast Actions <span class="badge badge-light">0</span></button>
+                        <button type="button" class="btn btn-primary">Dynamic Actions <span class="badge badge-light">4</span></button>
                     </div>
                 </div>
                 
                 <div class="card-body">
-                    
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img src="{{ asset('images/banner1.png') }}" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-lg-6">
+                            <img src="{{ asset('images/banner2.png') }}" alt="" class="img-fluid">
+                        </div>
+                    </div>
                 </div>
             </div>
             {{-- <div class="card mb-4">

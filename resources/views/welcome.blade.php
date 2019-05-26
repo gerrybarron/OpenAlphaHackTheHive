@@ -62,6 +62,9 @@
                 margin-bottom: 30px;
             }
         </style>
+            <script src="{{ asset('js/app.js') }}" defer></script>
+            <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -81,17 +84,17 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                <img src="{{ asset('images/allinjuan.png') }}" height="450px" class="p-4">
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#!">Funds</a>
+                    <a href="#!">Loans</a>
+                    <a href="#!">Insurance</a>
+                    <a href="#!">Investments</a>
+                    <a href="#!">Savings</a>
+                    <a href="#!">Micro Jobs</a>
+                    <a href="#!">Point System</a>
                 </div>
             </div>
         </div>
