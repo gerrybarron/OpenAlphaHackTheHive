@@ -18,6 +18,7 @@ class CreateExpendituresTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('amount');
             $table->text('description');
+            $table->enum('category', ['Bills', 'Family', 'Tuition', 'Health', 'Groceries', 'Leisure', 'Transportation', 'Tax', 'Loans', 'Insurance', 'Investment']);
             $table->index('user_id');
             $table->timestamps();
         });

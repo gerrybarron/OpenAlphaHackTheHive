@@ -27,7 +27,7 @@
                                 <img src="{{ asset('images/no-image.png') }}" alt="" id="img_src" class="img-fluid">
                                 <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror" >
                                 
-                                @error('firstname')
+                                @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

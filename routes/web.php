@@ -37,6 +37,11 @@ Route::prefix('account')->group(function() {
 Route::prefix('investment')->group(function() {
     Route::get('/', 'InvestmentController@index')->name('investment');
     Route::get('/products', 'InvestmentController@products')->name('investment.products');
-    Route::get('/product/{id}', 'InvestmentController@product')->name('investment.product');
+    Route::get('/product/atram', 'InvestmentController@atram')->name('investment.atram');
+    Route::get('/product/alfm', 'InvestmentController@alfm')->name('investment.alfm');
 });
 
+Route::prefix('expenses')->group(function() {
+    Route::get('/', 'ExpenseController@index')->name('expenses');
+    Route::post('/store', 'ExpenseController@store')->name('expense.store');
+});

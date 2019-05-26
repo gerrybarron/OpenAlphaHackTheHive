@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Expenditure;
 
-class InvestmentController extends Controller
+class ExpenseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,11 @@ class InvestmentController extends Controller
      */
     public function index()
     {
-        // return 'test';
-        return view('dashboard.investment.index');
+        // return auth()->user()->id;
+        
+        $expenses = Expenditure::where('user_id', auth()->user()->id)->orderBy('created_at', 'desc')->get();
+        
+        return view('dashboard.expense.index')->with('expenses', $expenses);
     }
 
     /**
@@ -22,9 +26,9 @@ class InvestmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function products()
+    public function create()
     {
-        return view('dashboard.investment.products');
+        //
     }
 
     /**
@@ -35,7 +39,20 @@ class InvestmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'category' => 'required',
+            'description' => 'required',
+            'amount' => 'required'
+        ]);
+        $imagePath = request('image')->store('uploads', 'public');
+
+        auth()->user()->expenditures()->create($data)->receiptGallery()->create([
+            'filename' => $imagePath
+        ]);
+        // $expense = new Expenditure();
+        // $expense->create($data);
+
+        return redirect()->back()->with('success', 'New expense added.');
     }
 
     /**
@@ -47,16 +64,6 @@ class InvestmentController extends Controller
     public function show($id)
     {
         //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function atram()
-    {
-        return view('dashboard.investment.atram');
     }
 
     /**

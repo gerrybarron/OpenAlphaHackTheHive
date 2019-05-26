@@ -26,7 +26,7 @@
                         </div>
                         <strong class="text-center">ATRAM Peso Money Market Fund</strong>
                         <p>Risk Classification: Conservative</p>
-                        <a class="btn btn-primary btn-block" href="#" role="button">View Details</a>
+                        <a class="btn btn-primary btn-block" href="{{route('investment.atram')}}" role="button">View Details</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                         </div>
                         <strong class="text-center">ALFM Money Market Fund</strong>
                         <p>Risk Classification: Conservative</p>
-                        <a class="btn btn-primary btn-block" href="#" role="button">View Details</a>
+                        <a class="btn btn-primary btn-block" href="investment.alfm" role="button">View Details</a>
                     </div>
                 </div>
             </div>

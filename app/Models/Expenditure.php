@@ -11,13 +11,13 @@ class Expenditure extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'amount', 'description'];
+    protected $fillable = ['user_id', 'amount', 'description', 'category'];
 
     public function user(){
         return $this->belongsTo(User::class);
     }
     
-    public function receiptGalleries(){
-        return $this->hasMany(ReceiptGallery::class);
+    public function receiptGallery(){
+        return $this->hasOne(ReceiptGallery::class);
     }
 }

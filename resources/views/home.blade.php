@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-3">
-            <a href="{{route('account')}}" class="text-body mb-0"><strong>P {{$fund->amount}}</strong></a>
+            <a href="{{route('account')}}" class="text-body mb-0  text-sm-center"><strong>P {{$fund->amount}}</strong></a>
             <p>Account</p>
         </div>
         <div class="col-lg-6">
@@ -35,6 +35,35 @@
                     @endif
                     
                     You are logged in!
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header d-flex">
+                    Expenditures
+                    <a class="btn btn-primary ml-auto btn-sm" href="{{route('expenses')}}" role="button">View all</a>
+                </div>
+                
+                <div class="card-body">
+                    <p>Breakdown of my expenses</p>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td scope="row">ATRAM Peso Money Market Fund</td>
+                                <td class="text-right">350.62</td>
+                            </tr>
+                            <tr>
+                                <td scope="row">ALFM Money Market Fund</td>
+                                <td class="text-right">350.62</td>
+                                
+                            </tr>
+                            <tr>
+                                <th scope="row">Total Market Value of Investment</th>
+                                <th class="text-right" style="border-top:1px solid #cccccc">750</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
